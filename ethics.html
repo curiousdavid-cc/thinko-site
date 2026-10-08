@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<title>윤리강령 | THINKO+</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== THINKO+ 라이트/전문가 컨셉 공통 CSS ===== */
+:root{
+  box-sizing:border-box;
+  --bg:#f6f8fc;
+  --bg2:#eef2f9;
+  --card:#ffffff;
+  --ink:#0f1b34;
+  --ink2:#33415c;
+  --muted:#65728c;
+  --line:#e2e8f2;
+  --line2:#d3dbe9;
+  --accent:#1b63f0;
+  --accent-soft:#e8f0ff;
+  --teal:#0d9488;
+  --teal-soft:#dcf5f1;
+  --shadow:0 1px 3px rgba(15,27,52,.05),0 8px 28px rgba(15,27,52,.06);
+  --shadow-lg:0 12px 40px rgba(15,27,52,.10);
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:inherit;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ink2);font-family:"Inter","Noto Sans KR",sans-serif;
+  line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  /* 은은한 도트 배경 패턴 */
+  background-image:radial-gradient(var(--line2) 1px,transparent 1px);
+  background-size:22px 22px;background-attachment:fixed}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{color:var(--ink);letter-spacing:-.02em;line-height:1.2;font-weight:600}
+h1,h2{font-family:"Fraunces","Noto Sans KR",serif;font-weight:600}
+.serif{font-family:"Fraunces","Noto Sans KR",serif}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
+  background:rgba(246,248,252,.85);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font-family:"Fraunces",serif;font-weight:600;font-size:1.35rem;display:flex;align-items:center;gap:10px;color:var(--ink)}
+.logo .mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--teal));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:.95rem;font-weight:700;font-family:"Inter";letter-spacing:-.03em}
+.menu{display:flex;gap:32px;font-size:.95rem;color:var(--ink2);font-weight:500}
+.menu a{position:relative;padding:4px 0}
+.menu a:hover,.menu a.active{color:var(--accent)}
+.menu a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--accent);border-radius:2px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;
+  font-size:.92rem;font-weight:600;transition:.2s;cursor:pointer;border:0;font-family:"Inter","Noto Sans KR"}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#1550ce;transform:translateY(-1px);box-shadow:0 6px 18px rgba(27,99,240,.28)}
+.btn-ghost{border:1px solid var(--line2);color:var(--ink);background:var(--card)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.nav-toggle{display:none;background:none;border:0;color:var(--ink);font-size:1.5rem}
+
+/* PAGE HERO */
+.page-hero{position:relative;padding:88px 0 60px;text-align:center;overflow:hidden}
+.page-hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(720px 300px at 50% -10%,var(--accent-soft),transparent 65%)}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;color:var(--accent);font-weight:600;
+  border:1px solid var(--line2);padding:7px 15px;border-radius:999px;margin-bottom:22px;background:var(--card);box-shadow:var(--shadow)}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.page-hero h1{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:16px}
+.page-hero p{color:var(--muted);max-width:580px;margin:0 auto;font-size:1.08rem}
+
+/* SECTION */
+.section{padding:84px 0}
+.section-head{text-align:center;margin-bottom:52px}
+.section-head h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:12px}
+.section-head p{color:var(--muted)}
+.tag{display:inline-block;font-size:.8rem;color:var(--teal);font-weight:700;margin-bottom:14px;
+  text-transform:uppercase;letter-spacing:.08em}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:60px 0 40px;background:var(--card)}
+.foot{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:36px}
+.foot h4{font-size:.82rem;color:var(--muted);margin-bottom:16px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot a{color:var(--ink2);font-size:.92rem}
+.foot a:hover{color:var(--accent)}
+.foot .addr{color:var(--muted);font-size:.85rem;line-height:1.8}
+.copy{border-top:1px solid var(--line);margin-top:40px;padding-top:24px;
+  display:flex;justify-content:space-between;color:var(--muted);font-size:.83rem;flex-wrap:wrap;gap:12px}
+
+@media(max-width:860px){
+  .menu,nav .btn-ghost{display:none}
+  .nav-toggle{display:block}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>
+  .ethics-meta{margin-top:20px;font-size:.88rem;color:var(--muted);
+    display:inline-block;border:1px solid var(--line2);border-radius:999px;padding:6px 16px;background:var(--card)}
+  .ethics-wrap{display:grid;grid-template-columns:230px 1fr;gap:48px;align-items:start}
+  /* 목차 */
+  .toc{position:sticky;top:100px;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+  .toc-title{font-size:.8rem;font-weight:700;color:var(--muted);text-transform:uppercase;
+    letter-spacing:.06em;margin-bottom:14px}
+  .toc nav{display:flex;flex-direction:column;gap:2px}
+  .toc a{font-size:.88rem;color:var(--ink2);padding:8px 10px;border-radius:8px;transition:.15s;line-height:1.4}
+  .toc a:hover{background:var(--accent-soft);color:var(--accent)}
+  /* 본문 */
+  .ethics-body{max-width:760px}
+  .preamble{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:12px;padding:26px 28px;color:var(--ink2);font-size:.98rem;line-height:1.8;margin-bottom:44px}
+  .chapter{margin-bottom:44px;scroll-margin-top:100px}
+  .chapter>h2{font-size:1.4rem;color:var(--ink);padding-bottom:12px;margin-bottom:22px;
+    border-bottom:2px solid var(--accent-soft)}
+  .article{margin-bottom:22px}
+  .article h3{font-size:1.02rem;color:var(--accent);margin-bottom:7px;font-weight:600}
+  .article p{color:var(--ink2);font-size:.95rem;line-height:1.8}
+  .addendum{margin-top:32px;padding-top:24px;border-top:1px dashed var(--line2)}
+  .addendum h3{font-size:1.02rem;color:var(--teal);margin-bottom:7px}
+  .addendum p{color:var(--ink2);font-size:.95rem}
+  .ethics-cta{margin-top:48px;padding:32px;background:var(--bg2);border:1px solid var(--line);
+    border-radius:16px;text-align:center}
+  .ethics-cta p{color:var(--ink2);margin-bottom:18px;font-size:.95rem}
+  @media(max-width:860px){
+    .ethics-wrap{grid-template-columns:1fr}
+    .toc{position:static;margin-bottom:8px}
+    .toc nav{display:grid;grid-template-columns:1fr 1fr}
+  }
+</style>
+</head><body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="logo"><span class="mark">T+</span>THINKO+</a>
+      <div class="menu">
+        <a href="services.html" data-nav="services">서비스</a>
+        <a href="programs.html" data-nav="programs">세미나·교육</a>
+        <a href="index.html#insights">인사이트</a>
+        <a href="index.html#news">소식</a>
+        <a href="about.html" data-nav="about">회사 소개</a>
+      </div>
+      <a class="btn btn-primary" href="contact.html">상담 문의</a>
+      <button class="nav-toggle" aria-label="메뉴">☰</button>
+    </nav>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Code of Ethics</span>
+    <h1>THINKO+ 산업리서치<br>서비스 윤리강령</h1>
+    <p>신뢰할 수 있는 지식은 올바른 태도에서 나옵니다. THINKO+는 리서치의 전 과정에서 다음의 윤리 원칙을 지킵니다.</p>
+    <div class="ethics-meta">시행일 2025년 1월 2일 · THINKO+</div>
+  </div>
+</section>
+
+<section class="section ethics" style="border-top:1px solid var(--line)">
+  <div class="wrap ethics-wrap">
+    <!-- 목차 -->
+    <aside class="toc">
+      <div class="toc-title">목차</div>
+      <nav>
+        <a href="#c1">제1장 총칙</a>
+        <a href="#c2">제2장 리서치 수행 윤리</a>
+        <a href="#c3">제3장 데이터·정보 윤리</a>
+        <a href="#c4">제4장 고객에 대한 윤리</a>
+        <a href="#c5">제5장 조사 대상·이해관계자</a>
+        <a href="#c6">제6장 AI 활용 윤리</a>
+        <a href="#c7">제7장 교육·사회적 책임</a>
+        <a href="#c8">제8장 보칙</a>
+      </nav>
+    </aside>
+
+    <!-- 본문 -->
+    <div class="ethics-body">
+      <div class="preamble">
+        THINKO+는 산업과 시장을 데이터로 읽어 기업의 의사결정과 다음 세대의 진로를 돕는 지식정보 사업자로서, 리서치 결과의 신뢰성과 공정성이 우리 존재의 근간임을 깊이 인식한다. 이에 모든 구성원이 지켜야 할 윤리적 판단과 행동의 기준을 다음과 같이 정한다.
+      </div>
+
+      <section class="chapter" id="c1">
+        <h2>제1장 총칙</h2>
+        <div class="article"><h3>제1조 (목적)</h3><p>이 윤리강령(이하 “강령”)은 THINKO+와 소속 구성원이 산업리서치 및 교육 서비스를 수행함에 있어 준수해야 할 윤리적 판단과 의사결정의 기준을 정함을 목적으로 한다.</p></div>
+        <div class="article"><h3>제2조 (적용범위)</h3><p>이 강령은 THINKO+에 속한 모든 임직원과, THINKO+의 이름으로 리서치·자문·교육 업무를 수행하는 협력 전문가에게 적용한다.</p></div>
+        <div class="article"><h3>제3조 (준수의무)</h3><p>① 모든 구성원은 이 강령을 숙지하고 준수하여야 하며, 위반 시 그에 따른 책임을 진다.<br>② 대표이사는 모든 구성원이 강령을 숙지하고 준수하도록 관리·감독할 책임이 있다.</p></div>
+      </section>
+
+      <section class="chapter" id="c2">
+        <h2>제2장 리서치 수행 윤리</h2>
+        <div class="article"><h3>제4조 (객관성과 독립성)</h3><p>구성원은 특정 이해관계에 치우치지 않고 객관적 근거에 기반하여 리서치를 수행한다. 의뢰인의 기대나 외부의 압력이 분석 결과를 왜곡하도록 허용하지 아니한다.</p></div>
+        <div class="article"><h3>제5조 (방법론의 엄정성)</h3><p>구성원은 검증된 조사·분석 방법론을 사용하며, 표본·범위·한계를 명확히 밝힌다. 결론을 뒷받침할 수 없는 과장이나 단정을 하지 아니한다.</p></div>
+        <div class="article"><h3>제6조 (결과의 정직한 보고)</h3><p>구성원은 유리한 정보만을 선별하거나 불리한 사실을 은폐하지 아니하며, 불확실성이 있는 경우 이를 있는 그대로 전달한다.</p></div>
+        <div class="article"><h3>제7조 (이해 충돌 회피)</h3><p>구성원은 리서치의 공정성을 훼손할 수 있는 이해관계를 사전에 점검·회피하며, 불가피한 경우 이를 고객에게 투명하게 고지한다.</p></div>
+      </section>
+
+      <section class="chapter" id="c3">
+        <h2>제3장 데이터·정보 윤리</h2>
+        <div class="article"><h3>제8조 (출처의 투명성)</h3><p>구성원은 인용한 데이터와 문헌의 출처를 명확히 밝히고, 원저작자의 지적재산권을 존중한다. 출처가 불분명한 정보를 사실인 것처럼 제시하지 아니한다.</p></div>
+        <div class="article"><h3>제9조 (데이터 무결성)</h3><p>구성원은 데이터를 임의로 조작·삭제·위조하지 아니하며, 수집·처리·보관의 전 과정에서 정확성과 추적 가능성을 유지한다.</p></div>
+        <div class="article"><h3>제10조 (개인정보 보호)</h3><p>구성원은 관련 법령에 따라 개인정보를 적법하게 수집·이용하며, 조사 과정에서 취득한 개인정보를 목적 외로 사용하거나 외부에 유출하지 아니한다.</p></div>
+        <div class="article"><h3>제11조 (기밀 유지)</h3><p>구성원은 업무상 취득한 고객·조사 대상의 비공개 정보를 사전 승인 없이 외부에 공개하거나 사적으로 이용하지 아니한다.</p></div>
+      </section>
+
+      <section class="chapter" id="c4">
+        <h2>제4장 고객에 대한 윤리</h2>
+        <div class="article"><h3>제12조 (고객 존중)</h3><p>구성원은 고객의 관점에서 문제를 이해하고, 고객의 성공에 실질적으로 기여하는 것을 최우선의 기준으로 삼는다.</p></div>
+        <div class="article"><h3>제13조 (고객 이익 보호)</h3><p>구성원은 고객의 자산·영업비밀·정보를 소중히 보호하며, 비윤리적 행위로 고객의 이익을 침해하지 아니한다.</p></div>
+        <div class="article"><h3>제14조 (정확한 고지)</h3><p>구성원은 리서치의 범위·한계·전제를 고객에게 정확히 알리고, 고객이 결과를 오해하지 않도록 성실히 설명한다.</p></div>
+      </section>
+
+      <section class="chapter" id="c5">
+        <h2>제5장 조사 대상·이해관계자에 대한 윤리</h2>
+        <div class="article"><h3>제15조 (자발적 참여와 고지)</h3><p>구성원은 인터뷰·설문 등 조사에 참여하는 이해관계자에게 조사의 목적과 활용 범위를 사전에 고지하고, 자발적 동의를 바탕으로 진행한다.</p></div>
+        <div class="article"><h3>제16조 (공정한 표현)</h3><p>구성원은 조사 대상 기업·산업·개인을 사실에 근거하여 공정하게 서술하며, 근거 없는 비방이나 편향된 표현을 하지 아니한다.</p></div>
+        <div class="article"><h3>제17조 (공정 경쟁)</h3><p>구성원은 시장경제 질서를 존중하고, 경쟁사와는 상호존중을 바탕으로 정정당당하게 선의의 경쟁을 추구한다.</p></div>
+      </section>
+
+      <section class="chapter" id="c6">
+        <h2>제6장 인공지능 활용 윤리</h2>
+        <div class="article"><h3>제18조 (책임 있는 활용)</h3><p>구성원은 리서치·분석에 인공지능을 활용할 때, 그 결과를 무비판적으로 수용하지 아니하고 전문가의 검증을 거쳐 책임 있게 사용한다.</p></div>
+        <div class="article"><h3>제19조 (편향의 경계)</h3><p>구성원은 인공지능 결과에 내재할 수 있는 사회적 편견과 차별을 경계하며, 자동화된 판단이 왜곡되지 않도록 주의한다.</p></div>
+        <div class="article"><h3>제20조 (설명 가능성)</h3><p>구성원은 인공지능을 활용해 도출한 결론에 대해, 그 근거와 과정을 고객에게 설명할 수 있도록 노력한다.</p></div>
+      </section>
+
+      <section class="chapter" id="c7">
+        <h2>제7장 교육·사회적 책임</h2>
+        <div class="article"><h3>제21조 (교육의 진정성)</h3><p>구성원은 진로 교육·멘토링에서 검증된 정보와 진솔한 경험을 전하며, 수강생의 성장을 사업적 이익보다 우선한다.</p></div>
+        <div class="article"><h3>제22조 (차별 금지)</h3><p>구성원은 교육·멘토링 대상을 성별·학력·연령·출신 등을 이유로 차별하지 아니하고, 균등한 기회를 제공한다.</p></div>
+        <div class="article"><h3>제23조 (사회적 기여)</h3><p>THINKO+는 축적한 지식을 사회와 나누어, 산업과 사람의 건강한 성장에 기여하도록 노력한다.</p></div>
+      </section>
+
+      <section class="chapter" id="c8">
+        <h2>제8장 보칙</h2>
+        <div class="article"><h3>제24조 (교육)</h3><p>대표이사는 구성원의 윤리의식 제고와 강령 준수를 위한 교육을 매년 1회 이상 실시한다.</p></div>
+        <div class="article"><h3>제25조 (위반 시 조치)</h3><p>대표이사는 이 강령에 저촉되는 행위를 한 구성원에 대하여 관련 규정에 따라 필요한 조치를 취할 수 있다.</p></div>
+        <div class="article"><h3>제26조 (개정)</h3><p>이 강령은 관련 법령의 변화와 사업 환경에 따라 개정할 수 있으며, 개정 시 그 내용을 구성원에게 고지한다.</p></div>
+        <div class="addendum"><h3>부칙</h3><p>이 강령은 2025년 1월 2일부터 시행한다.</p></div>
+      </section>
+
+      <div class="ethics-cta">
+        <p>윤리강령 위반 신고 또는 문의는 아래로 연락해 주세요.</p>
+        <a class="btn btn-primary" href="contact.html">문의하기</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="index.html" class="logo" style="margin-bottom:16px"><span class="mark">T+</span>THINKO+</a>
+        <p class="addr" data-addr>시장·산업 리서치 · 데이터 분석 전문<br>서울특별시 서초구 강남대로 373 13층<br>hello@thinko.example · 02-000-0000</p>
+      </div>
+      <div><h4>서비스</h4><ul><li><a href="services.html">시장·산업 리서치</a></li><li><a href="services.html">데이터 분석</a></li><li><a href="services.html">전략 인사이트</a></li><li><a href="programs.html">세미나·교육</a></li><li><a href="services.html">코칭 & 멘토링</a></li></ul></div>
+      <div><h4>회사 소개</h4><ul><li><a href="about.html#mission">미션/비전</a></li><li><a href="about.html#history">연혁</a></li><li><a href="about.html#team">전문가 소개</a></li><li><a href="ethics.html">윤리강령</a></li></ul></div>
+      <div><h4>문의</h4><ul><li><a href="contact.html">상담 문의</a></li><li><a href="index.html#news">소식</a></li></ul></div>
+    </div>
+    <div class="copy">
+      <span>© THINKO+. All rights reserved.</span>
+      <span>이용약관 · 개인정보처리방침</span>
+    </div>
+  </div>
+</footer>
+<script>
+  var p=location.pathname.split("/").pop();
+  document.querySelectorAll("[data-nav]").forEach(function(a){if(p.indexOf(a.dataset.nav)>-1)a.classList.add("active")});
+</script>
+<script src="site-content.js"></script>
+</body></html>

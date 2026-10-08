@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<title>서비스 | THINKO+</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== THINKO+ 라이트/전문가 컨셉 공통 CSS ===== */
+:root{
+  box-sizing:border-box;
+  --bg:#f6f8fc;
+  --bg2:#eef2f9;
+  --card:#ffffff;
+  --ink:#0f1b34;
+  --ink2:#33415c;
+  --muted:#65728c;
+  --line:#e2e8f2;
+  --line2:#d3dbe9;
+  --accent:#1b63f0;
+  --accent-soft:#e8f0ff;
+  --teal:#0d9488;
+  --teal-soft:#dcf5f1;
+  --shadow:0 1px 3px rgba(15,27,52,.05),0 8px 28px rgba(15,27,52,.06);
+  --shadow-lg:0 12px 40px rgba(15,27,52,.10);
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:inherit;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ink2);font-family:"Inter","Noto Sans KR",sans-serif;
+  line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  /* 은은한 도트 배경 패턴 */
+  background-image:radial-gradient(var(--line2) 1px,transparent 1px);
+  background-size:22px 22px;background-attachment:fixed}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{color:var(--ink);letter-spacing:-.02em;line-height:1.2;font-weight:600}
+h1,h2{font-family:"Fraunces","Noto Sans KR",serif;font-weight:600}
+.serif{font-family:"Fraunces","Noto Sans KR",serif}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
+  background:rgba(246,248,252,.85);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font-family:"Fraunces",serif;font-weight:600;font-size:1.35rem;display:flex;align-items:center;gap:10px;color:var(--ink)}
+.logo .mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--teal));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:.95rem;font-weight:700;font-family:"Inter";letter-spacing:-.03em}
+.menu{display:flex;gap:32px;font-size:.95rem;color:var(--ink2);font-weight:500}
+.menu a{position:relative;padding:4px 0}
+.menu a:hover,.menu a.active{color:var(--accent)}
+.menu a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--accent);border-radius:2px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;
+  font-size:.92rem;font-weight:600;transition:.2s;cursor:pointer;border:0;font-family:"Inter","Noto Sans KR"}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#1550ce;transform:translateY(-1px);box-shadow:0 6px 18px rgba(27,99,240,.28)}
+.btn-ghost{border:1px solid var(--line2);color:var(--ink);background:var(--card)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.nav-toggle{display:none;background:none;border:0;color:var(--ink);font-size:1.5rem}
+
+/* PAGE HERO */
+.page-hero{position:relative;padding:88px 0 60px;text-align:center;overflow:hidden}
+.page-hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(720px 300px at 50% -10%,var(--accent-soft),transparent 65%)}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;color:var(--accent);font-weight:600;
+  border:1px solid var(--line2);padding:7px 15px;border-radius:999px;margin-bottom:22px;background:var(--card);box-shadow:var(--shadow)}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.page-hero h1{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:16px}
+.page-hero p{color:var(--muted);max-width:580px;margin:0 auto;font-size:1.08rem}
+
+/* SECTION */
+.section{padding:84px 0}
+.section-head{text-align:center;margin-bottom:52px}
+.section-head h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:12px}
+.section-head p{color:var(--muted)}
+.tag{display:inline-block;font-size:.8rem;color:var(--teal);font-weight:700;margin-bottom:14px;
+  text-transform:uppercase;letter-spacing:.08em}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:60px 0 40px;background:var(--card)}
+.foot{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:36px}
+.foot h4{font-size:.82rem;color:var(--muted);margin-bottom:16px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot a{color:var(--ink2);font-size:.92rem}
+.foot a:hover{color:var(--accent)}
+.foot .addr{color:var(--muted);font-size:.85rem;line-height:1.8}
+.copy{border-top:1px solid var(--line);margin-top:40px;padding-top:24px;
+  display:flex;justify-content:space-between;color:var(--muted);font-size:.83rem;flex-wrap:wrap;gap:12px}
+
+@media(max-width:860px){
+  .menu,nav .btn-ghost{display:none}
+  .nav-toggle{display:block}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>
+  /* 리서치 3단계 */
+  .research-flow{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .rf-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px 30px;
+    box-shadow:var(--shadow);transition:.25s;position:relative}
+  .rf-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+  .rf-ico{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    margin-bottom:18px;background:var(--accent-soft);color:var(--accent)}
+  .rf-ico svg{width:28px;height:28px;stroke:currentColor;stroke-width:1.8;fill:none;
+    stroke-linecap:round;stroke-linejoin:round}
+  .rf-card:nth-child(4) .rf-ico{background:var(--teal-soft);color:var(--teal)}
+  .rf-card h3{font-size:1.3rem;margin-bottom:12px}
+  .rf-card>p{color:var(--muted);font-size:.94rem;margin-bottom:18px}
+  .rf-list{list-style:none;display:flex;flex-direction:column;gap:9px;border-top:1px solid var(--line);padding-top:16px}
+  .rf-list li{color:var(--ink2);font-size:.88rem;padding-left:20px;position:relative;font-weight:500}
+  .rf-list li::before{content:"\2192";position:absolute;left:0;color:var(--accent);font-weight:700}
+  /* 교육 */
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .edu-text h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:20px}
+  .edu-lead{font-size:1.15rem;color:var(--ink);font-weight:500;margin-bottom:20px;
+    padding-left:18px;border-left:3px solid var(--teal)}
+  .edu-text>p{color:var(--muted);margin-bottom:16px}
+  .edu-text b{color:var(--ink)}
+  .edu-text .btn{margin-top:14px}
+  .edu-cards{display:flex;flex-direction:column;gap:16px}
+  .edu-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:24px;
+    display:flex;gap:16px;align-items:flex-start;transition:.25s}
+  .edu-card:hover{border-color:var(--teal);transform:translateX(4px)}
+  .ec-ico{width:44px;height:44px;border-radius:11px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+    background:var(--teal-soft);color:var(--teal)}
+  .ec-ico svg{width:22px;height:22px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .edu-card h4{font-size:1.08rem;margin-bottom:5px;color:var(--ink)}
+  .edu-card p{color:var(--muted);font-size:.9rem}
+  /* contact band */
+  .contact-band .cta-box{background:linear-gradient(135deg,var(--ink),#1a2b4d);border-radius:24px;
+    padding:64px 40px;text-align:center;position:relative;overflow:hidden}
+  .contact-band .cta-box::before{content:"";position:absolute;inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:20px 20px}
+  .contact-band h2{color:#fff;font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:14px;position:relative}
+  .contact-band p{color:rgba(255,255,255,.75);margin-bottom:28px;position:relative}
+  .contact-band .btn{position:relative}
+  @media(max-width:860px){
+    .research-flow{grid-template-columns:1fr}
+    .edu-grid{grid-template-columns:1fr;gap:36px}
+  }
+</style>
+</head><body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="logo"><span class="mark">T+</span>THINKO+</a>
+      <div class="menu">
+        <a href="services.html" data-nav="services">서비스</a>
+        <a href="programs.html" data-nav="programs">세미나·교육</a>
+        <a href="index.html#insights">인사이트</a>
+        <a href="index.html#news">소식</a>
+        <a href="about.html" data-nav="about">회사 소개</a>
+      </div>
+      <a class="btn btn-primary" href="contact.html">상담 문의</a>
+      <button class="nav-toggle" aria-label="메뉴">☰</button>
+    </nav>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Services</span>
+    <h1>지식을 의사결정과<br>진로로 잇는 서비스</h1>
+    <p>산업을 데이터로 읽어온 전문성으로, 기업의 결정과 사람의 성장을 함께 돕습니다.</p>
+  </div>
+</section>
+
+<!-- ===== 산업 리서치 ===== -->
+<section class="section" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head"><span class="tag">Industry Research</span><h2>산업 리서치</h2><p>기초 조사부터 전략 점검, 정부과제 용역까지 산업을 단계적으로 읽어드립니다</p></div>
+    <div class="research-flow">
+      <div class="rf-card">
+        <div class="rf-ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16" y2="16"/></svg></div>
+        <h3>기초 조사 · 산업 개요</h3>
+        <p>대상 산업의 전체 구조를 조망합니다. 시장 규모, 주요 플레이어, 밸류체인, 정책·규제 환경을 정리해 산업을 처음 접하는 관점에서도 명확한 큰 그림을 제공합니다.</p>
+        <ul class="rf-list">
+          <li>시장 규모·성장성 개요</li>
+          <li>밸류체인·주요 사업자 지도</li>
+          <li>정책·규제 환경 정리</li>
+        </ul>
+      </div>
+      <div class="rf-card">
+        <div class="rf-ico"><svg viewBox="0 0 24 24"><line x1="4" y1="20" x2="4" y2="13"/><line x1="10" y1="20" x2="10" y2="8"/><line x1="16" y1="20" x2="16" y2="11"/><line x1="22" y1="20" x2="22" y2="4"/></svg></div>
+        <h3>심층 분석</h3>
+        <p>표면적 정보를 넘어 산업의 작동 원리를 파고듭니다. 경쟁 구도, 수익 구조, 기술·수요 변화의 동인을 데이터로 분석해 의사결정에 필요한 핵심 인사이트를 도출합니다.</p>
+        <ul class="rf-list">
+          <li>경쟁 구도·수익 구조 분석</li>
+          <li>기술·수요 변화 동인 진단</li>
+          <li>기회·리스크 요인 평가</li>
+        </ul>
+      </div>
+      <div class="rf-card">
+        <div class="rf-ico"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><polyline points="9 11.5 11.5 14 15.5 9.5"/></svg></div>
+        <h3>전략 점검</h3>
+        <p>세운 전략이 시장 현실과 맞는지 객관적으로 검증합니다. 가정의 타당성, 리스크, 대안 시나리오를 점검해 기업이 확신을 갖고 다음 단계로 나아가도록 지원합니다.</p>
+        <ul class="rf-list">
+          <li>전략 가정·타당성 검증</li>
+          <li>리스크·민감도 점검</li>
+          <li>대안 시나리오 검토</li>
+        </ul>
+      </div>
+      <div class="rf-card">
+        <div class="rf-ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-5 9 5"/><line x1="4" y1="9" x2="4" y2="20"/><line x1="20" y1="9" x2="20" y2="20"/><line x1="9" y1="20" x2="9" y2="12"/><line x1="15" y1="20" x2="15" y2="12"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+        <h3>정부과제 조사 용역</h3>
+        <p>정부·공공기관의 연구·조사 용역을 수행합니다. 국내외 제도 벤치마킹부터 데이터 분석, 실행 가능한 방법론 제언까지 공공 조사에 요구되는 절차와 품질 기준에 맞춰 신뢰할 수 있는 결과물을 제공합니다.</p>
+        <ul class="rf-list">
+          <li>국내외 정책·제도 벤치마킹</li>
+          <li>빅데이터 기반 통계·분석 용역</li>
+          <li>실행 가능한 방법론·정책 제언</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 산업 진로 교육·멘토링 ===== -->
+<section class="section edu" style="background:var(--card);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="edu-grid">
+      <div class="edu-text">
+        <span class="tag">Coaching & Mentoring</span>
+        <h2>코칭 &amp; 멘토링</h2>
+        <p class="edu-lead">경영자에게는 함께 고민할 사고의 파트너가, 사회 초년생에게는 길을 비추는 나침반이 필요합니다.</p>
+        <p>THINKO+는 산업을 데이터로 읽어온 전문성을 바탕으로, <b>두꺼운 보고서를 건네는 대신 결정의 순간을 함께합니다.</b> 경영진에게는 전략적 의사결정의 동반자로, 다음 세대에게는 진로의 멘토로 함께합니다.</p>
+        <p>인공지능이 융합 산업에 영향을 미치기 시작한 <b>2019년부터</b> 이어온 전문가 강의와 멘토링의 경험이, 그 바탕이 됩니다.</p>
+        <a class="btn btn-primary" href="contact.html">코칭·멘토링 문의</a>
+      </div>
+      <div class="edu-cards">
+        <div class="edu-card"><div class="ec-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="16 8 10.5 10.5 8 16 13.5 13.5 16 8"/></svg></div><h4>경영진 · 리더 코칭</h4><p>대표와 리더의 의사결정을 곁에서 돕는 사고의 파트너. 정기 미팅을 통해 경영 이슈를 함께 논의하고 방향을 잡아갑니다.</p></div>
+        <div class="edu-card"><div class="ec-ico"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-3.8-.9L3 20l1.4-4.2A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg></div><h4>진로 멘토링</h4><p>사회 초년생과 취업 준비생의 고민에 맞춘 1:1 멘토링으로, 진출할 산업과 진로의 방향을 함께 찾습니다.</p></div>
+        <div class="edu-card"><div class="ec-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><line x1="12" y1="16" x2="12" y2="20"/><line x1="8" y1="20" x2="16" y2="20"/><polyline points="7 11 10 8 13 11 17 7"/></svg></div><h4>산업 입문 강의</h4><p>진출할 산업 영역을 쉽게 풀어내는 입문 커리큘럼. 2019년부터 연 8회 이상 꾸준히 진행해 왔습니다.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 문의 CTA ===== -->
+<section class="section contact-band">
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>어떤 과제든 함께 시작하세요</h2>
+      <p>리서치 의뢰, 코칭·멘토링 문의를 남겨주시면 전문가가 직접 안내합니다.</p>
+      <a class="btn btn-primary" href="contact.html">문의하기</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="index.html" class="logo" style="margin-bottom:16px"><span class="mark">T+</span>THINKO+</a>
+        <p class="addr" data-addr>시장·산업 리서치 · 데이터 분석 전문<br>서울특별시 서초구 강남대로 373 13층<br>hello@thinko.example · 02-000-0000</p>
+      </div>
+      <div><h4>서비스</h4><ul><li><a href="services.html">시장·산업 리서치</a></li><li><a href="services.html">데이터 분석</a></li><li><a href="services.html">전략 인사이트</a></li><li><a href="programs.html">세미나·교육</a></li><li><a href="services.html">코칭 & 멘토링</a></li></ul></div>
+      <div><h4>회사 소개</h4><ul><li><a href="about.html#mission">미션/비전</a></li><li><a href="about.html#history">연혁</a></li><li><a href="about.html#team">전문가 소개</a></li><li><a href="ethics.html">윤리강령</a></li></ul></div>
+      <div><h4>문의</h4><ul><li><a href="contact.html">상담 문의</a></li><li><a href="index.html#news">소식</a></li></ul></div>
+    </div>
+    <div class="copy">
+      <span>© THINKO+. All rights reserved.</span>
+      <span>이용약관 · 개인정보처리방침</span>
+    </div>
+  </div>
+</footer>
+<script>
+  var p=location.pathname.split("/").pop();
+  document.querySelectorAll("[data-nav]").forEach(function(a){if(p.indexOf(a.dataset.nav)>-1)a.classList.add("active")});
+</script>
+<script src="site-content.js"></script>
+</body></html>

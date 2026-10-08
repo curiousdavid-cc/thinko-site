@@ -1,0 +1,68 @@
+backend:
+  name: github
+  repo: OWNER/REPO          # ← GitHub 사용자명/저장소명 으로 바꿔주세요 (예: kangms/thinko-site)
+  branch: main              # ← 기본 브랜치명 (main 또는 master)
+
+# 이미지 등을 올릴 때 저장될 폴더 (지금은 안 써도 무방)
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+locale: "ko"
+
+collections:
+  - name: "site"
+    label: "사이트 정보"
+    files:
+      - name: "content"
+        label: "회사 정보 · 연락처 · 팀"
+        file: "content.json"
+        description: "이 값을 고치면 모든 페이지(푸터·연락처·소개)에 자동 반영됩니다."
+        fields:
+          - { name: "email",   label: "이메일",  widget: "string", hint: "예: hello@thinko.co.kr" }
+          - { name: "phone",   label: "전화번호", widget: "string", hint: "예: 02-1234-5678" }
+          - { name: "address", label: "주소",    widget: "string", hint: "예: 서울특별시 서초구 ..." }
+
+          - { name: "ceo_name", label: "대표 이름", widget: "string" }
+          - { name: "ceo_role", label: "대표 직함", widget: "string", hint: "예: 대표이사 · Chief Executive Officer" }
+          - { name: "ceo_current", label: "대표 현직 이력", widget: "list", hint: "한 줄에 이력 하나씩" }
+          - { name: "ceo_past",    label: "대표 전직 이력", widget: "list", hint: "한 줄에 이력 하나씩" }
+
+          - name: "team"
+            label: "팀원"
+            widget: "list"
+            label_singular: "팀원"
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields:
+              - { name: "name", label: "이름",  widget: "string" }
+              - { name: "role", label: "직책",  widget: "string" }
+
+          # ===== 세미나·교육 : 프로그램 개요 =====
+          - name: "program_intro"
+            label: "세미나·교육 — 프로그램 개요"
+            widget: "object"
+            fields:
+              - { name: "title", label: "제목", widget: "string" }
+              - { name: "lead",  label: "소개 문구(상단)", widget: "text" }
+              - { name: "desc",  label: "설명 문구", widget: "text" }
+              - name: "overview"
+                label: "사업개요 항목"
+                widget: "list"
+                label_singular: "항목"
+                summary: "{{fields.label}} : {{fields.value}}"
+                fields:
+                  - { name: "label", label: "항목명", widget: "string", hint: "예: 교육 대상" }
+                  - { name: "value", label: "내용",   widget: "string" }
+              - { name: "contact", label: "문의처", widget: "string" }
+
+          # ===== 세미나·교육 : 공지 목록 =====
+          - name: "program_notices"
+            label: "세미나·교육 — 공지 목록"
+            widget: "list"
+            label_singular: "공지"
+            summary: "{{fields.date}} · {{fields.title}}"
+            fields:
+              - { name: "date",     label: "날짜/시기", widget: "string", hint: "예: 2026-01 또는 2026.03.15" }
+              - { name: "category", label: "분류",      widget: "string", required: false, hint: "예: 교육 안내 / 세미나 / 모집" }
+              - { name: "title",    label: "제목",      widget: "string" }
+              - { name: "summary",  label: "요약(목록에 보임)", widget: "text" }
+              - { name: "body",     label: "상세 내용(펼치면 보임)", widget: "text", required: false }
