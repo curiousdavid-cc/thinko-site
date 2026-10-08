@@ -1,7 +1,7 @@
 backend:
   name: github
-  repo: OWNER/REPO          # ← GitHub 사용자명/저장소명 으로 바꿔주세요 (예: kangms/thinko-site)
-  branch: main              # ← 기본 브랜치명 (main 또는 master)
+  repo: curiousdavid-cc/thinko-site          # ← GitHub 사용자명/저장소명 으로 바꿔주세요 (예: kangms/thinko-site)
+  branch: curiousdavid-cc/thinko-site              # ← 기본 브랜치명 (main 또는 master)
 
 # 이미지 등을 올릴 때 저장될 폴더 (지금은 안 써도 무방)
 media_folder: "assets/uploads"
